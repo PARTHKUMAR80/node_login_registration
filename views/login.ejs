@@ -1,0 +1,42 @@
+<style>
+  .main-div{
+    border: 3px solid #333;
+    padding: 30px 100px;
+    border-radius: 6px;
+  }
+  .heading{
+    font-size: 5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px blue;
+    color: magenta;
+    text-align: center;
+  }
+  @media (max-width:550px){
+    .main-div{
+      padding: 30px 50px;
+    }
+  }
+</style>
+
+<div>
+  <h1 class="heading">Login Page</h1>
+  <div class="main-div">
+    <div class="errors">
+      <% include ./partials/messages %>
+    </div>
+    <form action="/users/login" method="POST">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" />
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Login</button>
+    </form>
+    <div>
+      <p class="lead mt-2">Dont have an account...! <span><a href="/users/register">Register</a></span></p>
+    </div>
+  </div>
+</div>

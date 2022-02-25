@@ -1,0 +1,38 @@
+<style>
+  h1{
+    font-size: 5rem;
+    color: magenta;
+    text-shadow: 2px 2px blue;
+    text-align: center;
+  }
+  .btn-div{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 60px;
+  }
+  .btn-div button{
+    font-size: 2rem;
+    background-color: #41bd39;
+    font-weight: bold;
+    border-radius: 4px;
+    padding: 2px 20px;
+    transition: transform 0.4s ease-in-out;
+  }
+  .btn-div button a{
+    color: white;
+    text-decoration: none;
+  }
+  #login-btn:hover{
+    transform: scale(1.2);
+  }
+  #regis-btn:hover{
+    transform: scale(1.2);
+  }
+</style>
+
+<h1>Welcome to our Website...!</h1>
+<div class="btn-div">
+  <button id="login-btn"><a href="/users/login">Login</a></button>
+  <button id="regis-btn"><a href="/users/register">Registration</a></button>
+</div>

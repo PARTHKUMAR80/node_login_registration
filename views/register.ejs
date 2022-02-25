@@ -1,0 +1,62 @@
+<style>
+  .heading{
+    font-size: 5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: magenta;
+    text-shadow: 2px 2px blue;
+  }
+  .main-div{
+    border: 3px solid #333;
+    border-radius: 4px;
+    box-shadow: 0px 0px 3px 4px blue;
+    padding: 30px 100px;
+  }
+  @media (max-width:550px){
+    .heading{
+      font-size: 4rem;
+    }
+    .main-div{
+      padding: 30px 50px;
+    }
+  }
+</style>
+
+<div>
+  <h1 class="heading">Registration</h1>
+  <div class="main-div">
+    <div>
+      <% include ./partials/messages %>
+    </div>
+    <div>
+      <form action="/users/register" method="POST">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="name" id="name" name="name" class="form-control" placeholder="Enter Name"
+            value="<%= typeof name != 'undefined' ? name : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email"
+            value="<%= typeof email != 'undefined' ? email : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-control" placeholder="Create Password"
+            value="<%= typeof password != 'undefined' ? password : '' %>" />
+        </div>
+        <div class="form-group">
+          <label for="password2">Confirm Password</label>
+          <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirm Password"
+            value="<%= typeof password2 != 'undefined' ? password2 : '' %>" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">
+          Register
+        </button>
+      </form>
+    </div>
+    <div>
+      <p class="lead mt-4">Have An Account? <a href="/users/login">Login</a></p>
+    </div>
+  </div>
+</div>
